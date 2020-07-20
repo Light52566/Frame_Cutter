@@ -40,7 +40,6 @@ while(cap.isOpened()):
                     similar = True
         if not similar:
             cv2.imwrite(os.path.join(args["second"],'frame'+str(i)+'.jpg'),frame)
-    #cv2.imwrite(os.path.join(args["second"],'frame'+str(i)+'.jpg'),frame)
     i+=1
 cap.release()
 cv2.destroyAllWindows()
