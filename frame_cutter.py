@@ -1,6 +1,6 @@
 
 
-# 1. Import the necessary packages
+# Import the necessary packages
 from skimage.measure import compare_ssim
 import argparse
 import imutils
@@ -10,13 +10,13 @@ import pathlib
 
 
 
-# 2. Construct the argument parse and parse the arguments
+# Construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-f", "--first", required=True, help="Directory of the video that will be used")
 ap.add_argument("-s", "--second", required=True, help="Directory for the frames to be saved")
 args = vars(ap.parse_args())
 
-# Opens the Video file
+# Open the Video file
 cap= cv2.VideoCapture(args["first"])
 i=0
 while(cap.isOpened()):
