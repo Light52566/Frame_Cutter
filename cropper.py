@@ -9,8 +9,8 @@ ap.add_argument("-f", "--first", required=True, help="Directory of the frames th
 #ap.add_argument("-s", "--second", required=True, help="Directory for the cropped frames to be saved")
 args = vars(ap.parse_args())
 
-height = 214
-width = 214
+height = 214    #adjust value to determine height of cropped images
+width = 214     #adjust value to determine width of cropped images
 
 for path in pathlib.Path(args["first"]).iterdir():
         if path.is_file():
@@ -21,7 +21,6 @@ for path in pathlib.Path(args["first"]).iterdir():
                 y = y // 2
                 x = x // 2
                 crop_img = img[y-(height//2):y+(height//2), x-(width//2):x+(width//2)]
-                cv2.imwrite(str(path),crop_img)
+                cv2.imwrite(str(path),crop_img) #path can be edited here to avoid overwrite
             else:
-                print(str(path) + "\t frame too small")            
-#cv2.imwrite(os.path.join(args["second"],'frame'+str(i)+'.jpg'),frame)
+                print(str(path) + "\t frame too small")
