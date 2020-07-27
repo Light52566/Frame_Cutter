@@ -9,8 +9,8 @@ ap.add_argument("-f", "--first", required=True, help="Directory of the frames th
 #ap.add_argument("-s", "--second", required=True, help="Directory for the cropped frames to be saved")
 args = vars(ap.parse_args())
 
-height = 214    #adjust value to determine height of cropped images
-width = 214     #adjust value to determine width of cropped images
+height = 224    #adjust value to determine height of cropped images
+width = 224     #adjust value to determine width of cropped images
 
 for path in pathlib.Path(args["first"]).iterdir():
         if path.is_file():
